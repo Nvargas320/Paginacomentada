@@ -1,0 +1,192 @@
+/* aqui llamamos a la etiqueta universal (*) la cual selecciona a todos los elementos
+del documento Al llamar a la etiqueta (*) aplicamos una margen y un padding de 0, ademas 
+se utilizo un (box-sizing: border-box) el cual establece como se calcula el ancho y alto 
+total de un elemento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Aqui llamamos al div class "container-page" para definir diferentes estilos, tales como (width), 
+el cual especifica la anchura de un elemento, tambien es utilizado el (heigth) especifica la altura 
+de un elemento,  el (max-width) permite establecer una medida utilizando expresiones matemáticas, el
+(min-width), (min-height) los cuales se usan para determinar la anchura y la altura mínima de un elemento, 
+el (position)  especifica cómo un elemento es posicionado en el documento, el (font-family) en este caso es 
+para modificar la fuente del texto*/
+.container-page {
+  width: 100%;
+  height: 100vh;
+  max-width: 1920px;
+  max-height: 1080px;
+  min-width: 1080px;
+  min-height: 720px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Aqui llamamos el div "fondo" que esta en el div "container-page" para definir el ancho (width) , la altura (height) , con el (overflow) evitamos que el contenido dentro se pase de su contenedor y le ponemos una posicion absoluta.    */
+.container-page .fondo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+
+/*  aqui llamamamos a la imagen que se encuentra dentro del div "fondo " se modifica el ancho , el alto  y se utiliza  el (object-fit) para que la imagen se ajuste a la caja */
+.container-page .fondo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* aqui se llama al div "fondo-negro " en el cual le estamos modificando el ancho, la altura , se le pone un fondo en degradado entre todos de negro y se le pone una posicion absoluta */
+.container-page .fondo-negro {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.334), black);
+  position: absolute;
+}
+
+
+/* aqui se llama al div "container-recuadro" y se le modifica el ancho , el alto , y se le da una posicion absoluta. */
+.container-page .container-recuadro {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+
+/* aqui se llama a el div "recuadro" se le modifica el ancho ,el alto, se le modifica el color , se pone en posicion absoluta , con el (transform) le estamos pidiendo que nos mueva el div un -50% , con el (left) lo movemos de izquierda a derecha y con el top determinamos la distancia entre el borde superior del elemento y el borde superior del bloque que lo contiene , se pone un (border-radius) para que el borde del div(recuadro) no quede en punta , con el (overflow) se evita que le contenido pase de su caja contenedora y se adapte a esta , con el (display flex) nos permite modificar mas comodamennte los hijos del contenedor(recuadro ) , le damos una (animation) que se demore 1s en comenzar y 2s en terminar , y se le pone la opacidad en 0 */ 
+.container-page .container-recuadro .recuadro {
+  width: 850px;
+  height: 500px;
+  background-color: rgba(136, 102, 240, 0);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 40%;
+  border-radius: 80px;
+  overflow: hidden;
+  display: flex;
+  animation: entrada 1s 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+
+/* se llama el div "re-left" y se le modifica el ancho, el alto y el color de fondo */
+.container-page .container-recuadro .recuadro .re-left {
+  width: 425px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+
+/* en el div "re-left" se llama a la etiqueta h2 y se le pone margenes a arriba a la derecha y a la izquierda , y se le cambia el color a la letra */
+.container-page .container-recuadro .recuadro .re-left h2 {
+  margin: 50px 50px 0px;
+  color: rgb(94, 94, 255);
+}
+
+/* En el div "re-lef" modificamos la etiqueta p , se le cambia el ancho y se le pone margen a los 2 lados y arriba y abajo */
+.container-page .container-recuadro .recuadro .re-left p {
+  width: 80%;
+  margin: 40px 50px;
+}
+
+/* En el div "re-left" modificamos la imagen , se le pone margen arriba y a los lados, y se le da un ancho */
+.container-page .container-recuadro .recuadro .re-left img {
+  margin: 40px 25% 0px;
+  width: 200px;
+}
+
+
+/* En el div "re.right" , le damos un ancho , un alto , un color de fondo , le damos un desenfoque con el (backdrop-filter), le damos una myor facilidad de acomodar los hijo del contenedor con el (displey flex), acomodamos el div en una direccion vertical y se justifica su contenido en el centro  */
+.container-page .container-recuadro .recuadro .re-right {
+  width: 425px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.142);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* En el div "grup" modificamos la posicion a relativa  */
+.container-page .container-recuadro .recuadro .re-right .grup {
+  position: relative;
+}
+
+/* En el div "re-right" modificamos la etiqueta h1 , se le pone un (display) que hace que el elemento genere una caja de elemento en bloque que fluye con el contenido circundante como si fuera una caja en linea, se le modifica el ancho , se le pone margen tanto arriba como abajo como a los lados, y se le cambia el color a blanco */
+.container-page .container-recuadro .recuadro .re-right h1 {
+  display: inline-block;
+  width: 200px;
+  margin: 40px 40px 40px 10%;
+  color: white;
+}
+
+/* En el div "re-right" en la etiqueta input modificamos el fondo para que no tenga nada , el ancho , el alto de la etiqueta le damos margen tanto arriba como abajo y tambien a los lados , se le quita el border , se le pone un borde en la parte de abajo de color blanco , se pone el (display) para que el elmento genere un cuadro en bloque , le modificamos el tamaño de la letra , se le cambia el color a la letra , se le cambia la fuente de la letra y se pone en cursiva*/ 
+.container-page .container-recuadro .recuadro .re-right input {
+  background: none;
+  width: 200px;
+  height: 40px;
+  margin: 40px 40px 0 10%;
+  border: none;
+  border-bottom: 1px solid white;
+  display: block;
+  font-size: 18px;
+  color: aqua;
+  font-family: "Itim", cursive;
+}
+
+/* Aqui llamamos al div container-page que en si contiene al div container-recuadro, tambien a recuadro, y tambien en este esta un input, y con la preferencia de estilo elegido (outline:none) queremos que cuando se pase el pulsor no quede con ningun recuadro */
+.container-page .container-recuadro .recuadro .re-right input:focus {
+  outline: none;
+}
+
+/* En el div "re-right" en la etiqueta label le modificamos el color de la letra, la posicion para que quede en un lugar fijo,  con el (left) lo movemos de izquierda a derecha y con el top determinamos la distancia entre el borde superior del elemento y el borde superior del bloque que lo contiene,  le damos una transicion que se demora 0.5 en comenzar y en terminar y le modificamos el tamaño de letra */
+.container-page .container-recuadro .recuadro .re-right label {
+  color: rgba(255, 255, 255, 0.508);
+  position: absolute;
+  left: 42px;
+  top: 50px;
+  pointer-events: none;
+  transition: 0.5s ease-in-out all;
+  font-size: 14px;
+}
+
+.container-page .container-recuadro .recuadro .re-right input:focus ~ label,
+.container-page .container-recuadro .recuadro .re-right input:valid ~ label {
+  color: rgb(255, 255, 255);
+  top: 25px;
+  font-size: 14px;
+}
+/*  aqui se llama a los diferentes div relacionados con el boton de (iniciar sesion), se especifica que no debe tener un fondo, tambien una margen de diferentes dimensiones mencionadas, un anchor de 80%, una altura de 40 pixeles, tambien se define que la letra tenga un color aqua, que no tenga borde, que el tamaño de la letra sea de 20 pixeles, por ultimo se define la anchura del area del contenido del elemento con 700 */
+.container-page .container-recuadro .recuadro .re-right button {
+  background: none;
+  margin: 60px 40px 0 10%;
+  width: 80%;
+  height: 40px;
+  color: aqua;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* Aqui utilizamos el comando (Keyframes) este se utiliza para la creacion de la animacion para la entrada del login */
+@keyframes entrada {
+  0% {
+    top: 40%;
+    opacity: 0;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
